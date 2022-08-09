@@ -9,12 +9,14 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage extends Page {
 
-    @FindBy(how = How.ID, using = "hplogo")
+    @FindBy(how = How.ID, using = "logo")
     public WebElement logo;
-    @FindBy(how = How.CSS, using = ".a4bIc > input")
+    @FindBy(how = How.CLASS_NAME, using = "#search > input")
     public WebElement searchField;
-    @FindBy(how = How.ID, using = "gb_70")
-    public WebElement loginButton;
+    @FindBy(how = How.CLASS_NAME, using = "caret")
+    public WebElement myAccount;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"top-links\"]/ul/li[2]/ul/li[2]/a")
+    public WebElement login;
 
     public MainPage(WebDriverLib driver) {
         super(driver);
@@ -29,7 +31,8 @@ public class MainPage extends Page {
     }
 
     public void clickLoginButton() {
-        driver.waitForElementPresent(loginButton);
-        loginButton.click();
+        myAccount.click();
+        driver.waitForElementPresent(login);
+        login.click();
     }
 }

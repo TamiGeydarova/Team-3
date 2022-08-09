@@ -9,13 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends Page{
 
-    @FindBy(how = How.CSS, using = "#identifierId")
+    @FindBy(how = How.ID, using = "input-email")
     public WebElement emailField;
-    @FindBy(how = How.CSS, using = "#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")
+    @FindBy(how = How.ID, using = "input-password")
     public WebElement passwordField;
-    @FindBy(how = How.CSS, using = "#passwordNext")
+    @FindBy(how = How.XPATH, using = "//*[@value='Login']")
     public WebElement loginButton;
-    @FindBy(how = How.CSS, using = "div.xgOPLd")
+    @FindBy(how = How.CSS, using = "alert")
     public WebElement errorMessageField;
 
     public LoginPage(WebDriverLib driver) {
@@ -24,15 +24,11 @@ public class LoginPage extends Page{
     }
 
     public void loginInto(String username, String password) {
-        driver.waitForElementPresent(emailField);
         emailField.sendKeys(username);
-        emailField.sendKeys(Keys.ENTER);
-        driver.waitForElementPresent(passwordField);
-        passwordField.sendKeys(username);
+        passwordField.sendKeys(password);
     }
 
-    public void clickSumbit() {
-        driver.waitForElementPresent(loginButton);
+    public void clickSubmit() {
         loginButton.click();
     }
 
