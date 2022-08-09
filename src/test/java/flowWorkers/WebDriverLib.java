@@ -19,6 +19,11 @@ import java.util.concurrent.TimeUnit;
 
 public class WebDriverLib implements WebDriver {
 
+    private String OS = System.getProperty("os.name").toLowerCase();
+    private String chromeDriver;
+    private String firefoxDriver;
+    private String ieDriver;
+
     private static WebDriver driver;
     private static WebDriverWait wait;
     private String driverPath = System.getProperty("user.dir") + "/src/test/resources/drivers/";
@@ -27,23 +32,20 @@ public class WebDriverLib implements WebDriver {
     private String baseURL = config.getConfiguration("browser.baseUrl");
 
     public void openBrowser() {
-        switch (browser) {
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
-                driver = new ChromeDriver();
-                break;
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
-                driver = new FirefoxDriver();
-                break;
-            case "ie":
-                System.setProperty("webdriver.ie.driver", driverPath + "IEDriverServer.exe");
-                driver = new InternetExplorerDriver();
-                break;
-            default:
-                System.out.println("Incorrect Browser");
-                break;
+        if(OS.contains("windows")) {
+            chromeDriver = "chromedriver.exe";
+            firefoxDriver = "geckodriver.exe";
+            ieDriver = "IEDriverServer.exe";
+        } else if(OS.contains("mac")) {
+            chromeDriver = "chromedriver";
+            firefoxDriver = "geckodriver";
+            ieDriver = "IEDriverServer";
+        } else if(OS.contains("linux")) {
+            chromeDriver = "chromedriver";
+            firefoxDriver = "geckodriver";
+            ieDriver = "IEDriverServer";
         }
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 20);
