@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckoutPage extends Page {
+public class TinaCheckoutPage extends Page {
     @FindBy(id = "input-email")
     private WebElement emailFieldInCheckoutPage;
 
@@ -18,7 +18,7 @@ public class CheckoutPage extends Page {
     @FindBy(xpath = "//*[@href='#collapse-payment-address']")
     private WebElement stepTwoBlock;
 
-    public CheckoutPage(WebDriverLib driver) {
+    public TinaCheckoutPage(WebDriverLib driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }

@@ -15,8 +15,8 @@ import static org.junit.Assert.assertTrue;
 
 public class TinaSteps extends GeneralSteps {
 
-    private HomePage homePage = new HomePage(driver);
-    private CheckoutPage checkoutPage = new CheckoutPage(driver);
+    private TinaHomePage homePage = new TinaHomePage(driver);
+    private TinaCheckoutPage checkoutPage = new TinaCheckoutPage(driver);
 
     @Given("^I am on shop page$")
     public void iAmOnShopPage(){
