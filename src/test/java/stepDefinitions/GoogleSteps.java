@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import java.util.Map;
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -10,6 +8,8 @@ import cucumber.api.java.en.When;
 import pageObjects.LoginPage;
 import pageObjects.MainPage;
 import pageObjects.ResultPage;
+
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -68,4 +68,12 @@ public class GoogleSteps extends GeneralSteps {
     public void error_message(String errorMessage) {
         assertThat(loginPage.getErrorMessage()).contains(errorMessage);
     }
+
+    @Given("^I (?:am on|open) age page$")
+    public void iAmOnAgePage() throws Throwable {
+        driver.get("https://kristinek.github.io/site/examples/age");
+    }
+
+
+
 }
