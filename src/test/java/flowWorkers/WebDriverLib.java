@@ -13,11 +13,17 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
+
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverLib implements WebDriver {
+    private String OS = System.getProperty("os.name").toLowerCase();
+    private String chromeDriver;
+    private String firefoxDriver;
+    private String ieDriver;
 
     private static WebDriver driver;
     private static WebDriverWait wait;
@@ -27,17 +33,31 @@ public class WebDriverLib implements WebDriver {
     private String baseURL = config.getConfiguration("browser.baseUrl");
 
     public void openBrowser() {
+        if(OS.contains("windows")) {
+            chromeDriver = "chromedriver.exe";
+            firefoxDriver = "geckodriver.exe";
+            ieDriver = "IEDriverServer.exe";
+        } else if(OS.contains("mac")) {
+            chromeDriver = "chromedriver";
+            firefoxDriver = "geckodriver";
+            ieDriver = "IEDriverServer";
+        } else if(OS.contains("linux")) {
+            chromeDriver = "chromedriver";
+            firefoxDriver = "geckodriver";
+            ieDriver = "IEDriverServer";
+        }
+
         switch (browser) {
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", driverPath + chromeDriver);
                 driver = new ChromeDriver();
                 break;
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", driverPath + firefoxDriver);
                 driver = new FirefoxDriver();
                 break;
             case "ie":
-                System.setProperty("webdriver.ie.driver", driverPath + "IEDriverServer.exe");
+                System.setProperty("webdriver.ie.driver", driverPath + ieDriver);
                 driver = new InternetExplorerDriver();
                 break;
             default:
