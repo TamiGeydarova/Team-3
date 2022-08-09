@@ -15,12 +15,10 @@ public class HomePage extends Page{
     @FindBy(how = How.XPATH, using = "//*[@href = 'http://www.demoshop24.com/index.php?route=checkout/checkout']")
     private WebElement checkoutLink;
 
-
-    public HomePage(WebDriverLib driver){
+    public HomePage(WebDriverLib driver) {
         super(driver);
-    };
-
-
+        PageFactory.initElements(driver, this);
+    }
 
     public void clickOnCartButtonInItemCard(){
         cartButtonInItemCard.click();

@@ -6,8 +6,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import org.openqa.selenium.By;
-
 import pageObjects.*;
 
 import java.util.Map;
@@ -17,8 +15,8 @@ import static org.junit.Assert.assertTrue;
 
 public class TinaSteps extends GeneralSteps {
 
-    static HomePage homePage;
-    static CheckoutPage checkoutPage;
+    private HomePage homePage = new HomePage(driver);
+    private CheckoutPage checkoutPage = new CheckoutPage(driver);
 
     @Given("^I am on shop page$")
     public void iAmOnShopPage(){
@@ -27,15 +25,12 @@ public class TinaSteps extends GeneralSteps {
 
     @When("^I add one item in Shopping Cart$")
     public void iAddOneItemInShoppingCart(){
-        //homePage.clickOnCartButtonInItemCard();
-        driver.findElement(By.xpath("//*[@type=\"button\" and @onclick=\"cart.add('43');\"]")).click();
-
+        homePage.clickOnCartButtonInItemCard();
     }
 
     @Then("^I click to the Checkout link$")
     public void iClickToTheCheckoutLink(){
-        //homePage.clickOnCheckoutLink();
-        driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=checkout/checkout']")).click();
+        homePage.clickOnCheckoutLink();
     }
 
     @Then("^I am on Checkout page$")
@@ -45,22 +40,21 @@ public class TinaSteps extends GeneralSteps {
 
     @And("^I input e-mail and password:$")
     public void iInputEmailAndPassword(Map<String,String> accountValues){
-        //checkoutPage.getEmailFieldInCheckoutPage().clear();
-        //checkoutPage.getEmailFieldInCheckoutPage().sendKeys(accountValues.get("email"));
+        checkoutPage.getEmailFieldInCheckoutPage().clear();
+        checkoutPage.getEmailFieldInCheckoutPage().sendKeys(accountValues.get("email"));
+        checkoutPage.getPasswordFieldInCheckoutPage().clear();
+        checkoutPage.getPasswordFieldInCheckoutPage().sendKeys(accountValues.get("password"));
 
-        driver.findElement(By.id("input-email")).clear();
-        driver.findElement(By.id("input-email")).sendKeys(accountValues.get("email"));
-        driver.findElement(By.id("input-password")).clear();
-        driver.findElement(By.id("input-password")).sendKeys(accountValues.get("password"));
     }
 
     @And("^I click on Login button$")
     public void iClickOnLoginButton(){
-        driver.findElement(By.id("button-login")).click();
+        checkoutPage.clickOnLogginButtonInCheckoutPage();
     }
 
     @And("^I check Step 2: Billing Details block is available and opened$")
     public void assertBillingDetailesBlockIsEvaible(){
-        assertTrue(driver.findElement(By.xpath("//*[@href='#collapse-payment-address']")).isDisplayed());
+        assertTrue(checkoutPage.getStepTwoBlock().isDisplayed());
+
     }
 }
