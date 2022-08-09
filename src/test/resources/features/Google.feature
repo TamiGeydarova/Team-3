@@ -1,6 +1,6 @@
 Feature: Google Feature Example
 
-  @INSERT_TAG_HERE
+#  @INSERT_TAG_HERE
   Scenario Outline: Search in google
     Given open Google webpage
     When search "<SearchingText>"
@@ -12,7 +12,7 @@ Feature: Google Feature Example
       | Selenium WebDriver | Selenium WebDriver                         |
       | Cucumber Trainings | Online training - Cucumber School·Cucumber |
 
-  @INSERT_TAG_HERE
+#  @INSERT_TAG_HERE
   Scenario: Login into Google with incorrect user data
     Given open Google webpage
     And click login button
