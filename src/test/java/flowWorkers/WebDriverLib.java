@@ -18,7 +18,6 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverLib implements WebDriver {
-
     private String OS = System.getProperty("os.name").toLowerCase();
     private String chromeDriver;
     private String firefoxDriver;
@@ -46,6 +45,23 @@ public class WebDriverLib implements WebDriver {
             ieDriver = "IEDriverServer";
         }
 
+        switch (browser) {
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", driverPath + chromeDriver);
+                driver = new ChromeDriver();
+                break;
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", driverPath + firefoxDriver);
+                driver = new FirefoxDriver();
+                break;
+            case "ie":
+                System.setProperty("webdriver.ie.driver", driverPath + ieDriver);
+                driver = new InternetExplorerDriver();
+                break;
+            default:
+                System.out.println("Incorrect Browser");
+                break;
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 20);
