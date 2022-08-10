@@ -48,7 +48,6 @@ public class LieneSteps {
     @Then("^I click on Checkout Button$")
     public void checkoutButton() {
         driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div[2]/a")).click();
-
     }
 
     @Then("^I click on Shopping Cart popup$")
@@ -56,7 +55,6 @@ public class LieneSteps {
         driver.findElement(By.xpath("//*[@id=\"cart\"]")).click();
 
     }
-
     @And("^I see the the Shopping Cart popup displayed$")
     public void popupDisplayed() {
         assertTrue(driver.findElement(By.xpath("//*[@id=\"cart\"]/ul")).isDisplayed());
