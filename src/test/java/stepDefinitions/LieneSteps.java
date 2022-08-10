@@ -13,14 +13,18 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
 import flowWorkers.WebDriverLib;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class LieneSteps {
     public WebDriverLib driver;
 
+
     public LieneSteps() {
         this.driver = new WebDriverLib();
     }
+
 
     @Given("^I am on the Home page$")
     public void IAmOnTheMainPage() {
@@ -47,18 +51,23 @@ public class LieneSteps {
 
     @Then("^I click on Checkout Button$")
     public void checkoutButton() {
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div[2]/a")).click();
+        driver.findElement(By.className("pull-right")).click();
     }
 
     @Then("^I click on Shopping Cart popup$")
     public void clickPopup() {
-        driver.findElement(By.xpath("//*[@id=\"cart\"]")).click();
-
+        driver.findElement(By.xpath("//*[@id=\"cart\"]/button")).click();
+        WebElement navigation = (new WebDriverWait(driver, 500))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"cart\"]/ul/li[2]/div/p/a[2]/strong")));
     }
+
+
     @And("^I see the the Shopping Cart popup displayed$")
     public void popupDisplayed() {
-        assertTrue(driver.findElement(By.xpath("//*[@id=\"cart\"]/ul")).isDisplayed());
+        assertTrue(driver.findElement(By.xpath("//*[@id=\"cart\"]/button")).isDisplayed());
+
     }
+
 
     @Then("^I click on Checkout$")
     public void smallCheckoutButton() {

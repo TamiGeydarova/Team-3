@@ -1,7 +1,6 @@
 @checkoutLink
 Feature: Checkout Button Appearance And Redirect To Checkout Page
 
-
   Background:
     Given I am on shop page
     When I add one item in Shopping Cart
@@ -21,6 +20,8 @@ Feature: Checkout Button Appearance And Redirect To Checkout Page
     And I see the the Shopping Cart popup displayed
     Then I click on Checkout
     And I am on the Checkout Page
+
+    //
 
 
 
