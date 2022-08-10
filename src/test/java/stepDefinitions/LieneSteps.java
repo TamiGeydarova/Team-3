@@ -8,6 +8,10 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
 import flowWorkers.WebDriverLib;
 
 
@@ -44,6 +48,25 @@ public class LieneSteps {
     @Then("^I click on Checkout Button$")
     public void checkoutButton() {
         driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div[2]/a")).click();
+
+    }
+
+    @Then("^I click on Shopping Cart popup$")
+    public void clickPopup() {
+        driver.findElement(By.xpath("//*[@id=\"cart\"]")).click();
+
+    }
+
+    @And("^I see the the Shopping Cart popup displayed$")
+    public void popupDisplayed() {
+        assertTrue(driver.findElement(By.xpath("//*[@id=\"cart\"]/ul")).isDisplayed());
+    }
+
+    @Then("^I click on Checkout$")
+    public void smallCheckoutButton() {
+        driver.findElement(By.xpath("//*[@id=\"cart\"]/ul/li[2]/div/p/a[2]/strong/i")).click();
+
+
     }
 
 }
