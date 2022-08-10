@@ -43,14 +43,96 @@ import org.openqa.selenium.support.ui.Select;
         driver.findElement(By.id("input-sort")).click();
     }
     @And("^I Sort by Alphabet AZ$")
-        public void iSortByAlphabetAZ(){
+        public void iSortByAlphabetAZ() throws InterruptedException {
         Select dropdown = new Select(driver.findElement(By.id("input-sort")));
         dropdown.selectByVisibleText("Name (A - Z)");
+        Thread.sleep(2000);
     }
-    @Then ("^I check merchendise$")
-        public void iCheckMerchendise(){
-        
+//    @Then ("^I check merchendise AZ$")
+//        public void iCheckMerchendiseAZ(){
+//        driver.findElement(By.xpath("//a[contains(text(),'Apple Cinema 30')]"));
+//        driver.findElement(By.xpath("//a[contains(text(),'Sony VAIO')]"));
+
+        @Then ("^I Sort by Alphabet ZA$")
+        public void iSortByAlphabetZA() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Name (Z - A)");
+            Thread.sleep(2000);
+        }
+
+        //    @Then ("^I check merchendise ZA$")
+//        public void iCheckMerchendiseZA(){
+        //        driver.findElement(By.xpath("//a[contains(text(),'Sony VAIO')]"));
+//        driver.findElement(By.xpath("//a[contains(text(),'Apple Cinema 30')]"));
+
+        @Then ("^I Sort by Price Low to High$")
+        public void iSortByPriceLowtoHigh() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Price (Low > High)");
+            Thread.sleep(2000);
+        }
+
+////        @And ("^I check merchendise Price Low to High$")
+//        public void iCheckmerchendisePriceLowtoHigh(){
+//
+//        }
+
+        @Then ("^I Sort by Price High to Low$")
+        public void iSortByPriceHighttoLow() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Price (High > Low)");
+            Thread.sleep(2000);
     }
+
+//        @And ("^I check merchendise Price High to Low$")
+//         public void iCheckMerchendisePriceHightoLow() {
+//        }
+
+        @Then ("^I Sort by rating High to low$")
+        public void iSortByRatingHightoLow() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Rating (Highest)");
+            Thread.sleep(2000);
+        }
+
+//        @And ("^I check merchendise rating High to low$")
+//        public void iCheckMerchendiseRatingHightoLow() {
+//        }
+
+        @Then ("^I Sort by rating Low to High$")
+        public void iSortByRatingLowtoHigh() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Rating (Lowest)");
+            Thread.sleep(2000);
+        }
+//        @And ("^I check merchendise rating Low to High$")
+//        public void iCheckMerchendiseRatingLowtoHigh(){
+//
+//        }
+
+        @Then ("^I Sort by Model name alphabetically AZ$")
+        public void iSortByModelNameAlphabeticallyAZ() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Model (A - Z)");
+            Thread.sleep(2000);
+        }
+//        @And ("^I check merchendise models AZ$")
+//        public void iCheckMerchendiseModelsAZ(){
+//
+//        }
+
+        @Then ("^I Sort by Model name alphabetically ZA$")
+        public void iSortByModelNameAlphabeticallyZA() throws InterruptedException {
+            Select dropdown = new Select(driver.findElement(By.id("input-sort")));
+            dropdown.selectByVisibleText("Model (Z - A)");
+            Thread.sleep(2000);
+        }
+
+//        @And ("^I check merchendise models ZA$")
+//        public void iCheckMerchediseModelsZA(){
+//
+//        }
+
 
 }
         //Name (A - Z)
