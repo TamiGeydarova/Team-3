@@ -12,7 +12,7 @@ Feature: Team3 Test Case 29 execution
     And I click on Login button in authorization page
     Then I am on the MP3 Players list page
     And I press heart icon on iPod Classic
-#    And I see message "Success: You have added iPod Classic to your wish list!"
+    And I see message "Success: You have added iPod Classic to your wish list!"
     And Wishlist icon is updated accordingly
 
     Examples:

@@ -12,7 +12,7 @@ public class TinaProductPages extends Page{
     @FindBy(how = How.XPATH, using = "//*[@data-toggle=\"tooltip\" and @onclick=\"wishlist.add('48');\"]")
     private WebElement heartButtonIPodClassic;
 
-    @FindBy(how = How.CLASS_NAME,using = "alert alert-success alert-dismissible")
+    @FindBy(how = How.CLASS_NAME,using = "alert")
     private WebElement successAlert;
 //-----------------------------------------------------------
 

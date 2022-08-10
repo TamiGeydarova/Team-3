@@ -27,12 +27,6 @@ public class TinaHomePage extends Page{
     @FindBy(how = How.XPATH, using = "//*[@href='http://www.demoshop24.com/index.php?route=account/login']")
     private WebElement loginLink;
 
-    @FindBy(how = How.CSS, using = ".collapse .dropdown:nth-of-type(1)")
-    private WebElement playersInMainMenu;
-
-    @FindBy(xpath = "//*[@href='http://www.demoshop24.com/index.php?route=product/category&path=34' and @class = 'see-all']")
-    private WebElement showAllPlayersLink;
-
     @FindBy(id = "wishlist-total")
     private WebElement wishListLink;
 
@@ -53,17 +47,6 @@ public class TinaHomePage extends Page{
     public void clickOnMyAccountLink(){myAccountLink.click();}
 
     public void clickOnLoginLink(){loginLink.click();}
-
-    public void hoverOverPlayersButton(){
-        wait = new WebDriverWait(driver, 20);
-        wait.until(ExpectedConditions.elementToBeClickable(playersInMainMenu));
-        actions.moveToElement(playersInMainMenu).perform();
-       //playersInMainMenu.click();
-    }
-
-    public void clickShowAllPlayersLink(){
-        showAllPlayersLink.click();
-    }
 
     public String showWishListTitle(){
         return wishListLink.getAttribute("Title");

@@ -6,11 +6,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.*;
 
 import java.util.Map;
@@ -91,32 +86,6 @@ public class TinaSteps extends GeneralSteps {
     public void clickLoginButtonOnLoginPage(){
         loginPage.clickOnLoginButtonInLoginPage();
     }
-
-//    @Then("^I hover over MP3 Players category$")
-////    public void testMethod()throws Exception{
-////        WebElement main = driver.findElement(By.xpath("//*[@href='http://www.demoshop24.com/index.php?route=product/category&path=34' and @class = 'dropdown-toggle']"));
-////        hover.moveToElement(main);
-////        Thread.sleep(2000);
-////        WebElement show = driver.findElement(By.xpath("//*[@href='http://www.demoshop24.com/index.php?route=product/category&path=34' and @class = 'see-all']"));
-////        hover.moveToElement(show);
-////        Thread.sleep(2000);
-////        hover.click().build().perform();
-////        Thread.sleep(2000);
-////    }
-//
-//
-//
-//    public void iHoverOverPlayersCategory()throws Exception{
-//
-//        homePage.hoverOverPlayersButton();
-//    //    Thread.sleep(10000);
-//    }
-//
-//    @And("^I click on Show all MP3 Players$")
-//    public void iClickShowAllPlayers()throws Exception{
-//        homePage.clickShowAllPlayersLink();
-//    //    Thread.sleep(3000);
-//    }
 
     @Then("^I am on the MP3 Players list page$")
     public void iAmOnProductListPage(){
