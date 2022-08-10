@@ -35,7 +35,6 @@ public class LieneSteps {
     }
 
 
-
     @Then("^I click on Shopping Cart in top menu$")
     public void shoppingCartInTopMenu() {
         driver.findElement(By.xpath("//*[@id=\"top-links\"]/ul/li[4]/a/i")).click();
