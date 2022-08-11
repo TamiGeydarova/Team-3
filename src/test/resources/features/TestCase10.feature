@@ -1,4 +1,4 @@
-@Test10
+@Team3 @Test10
 Feature: Team3 Test Case 10 execution
   As a Bootcamp participant
   I want to be able to write and execute 1 scenario for Checkout page
