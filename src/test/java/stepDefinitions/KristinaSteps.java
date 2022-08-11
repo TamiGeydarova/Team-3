@@ -139,28 +139,12 @@ public class KristinaSteps extends GeneralSteps {
     }
     @And("^i see number of MP3 players$")
     public void iSeeNumberOfMp3Players(){
-        //checking that drop-down is visible
         assertTrue(driver.findElement(By.className("dropdown-menu")).isEnabled());
-        //assertTrue(driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=34_43']")).isEnabled());
 
-
-        //checking that element are shown correctly
         assertEquals("test 11 (0)", driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=34_43']")).getText());
 
     }
 
-//    @Then("^add out of stock item to basket$")
-//    public void iaddoutofstockitem(){
-//        driver.get("http://www.demoshop24.com/index.php?route=product/product&product_id=40");
-//        driver.findElement(By.id("button-cart")).click();
-//        homePage.clickOnCheckoutLink();
-//    }
-//    @And("^I see error$")
-//    public void iseeerror(){
-//        assertEquals("Products marked with *** are not available in the desired quantity or not in stock!\n" +
-//                "×",driver.findElement(By.className("alert-dismissible")).getText());
-//
-//    }
 
 
 }

@@ -1,17 +1,6 @@
 Feature: Kristina
 
 
-#  Scenario Outline: Search in google
-#    Given open Google webpage
-#    When search "<SearchingText>"
-#    Then result page was opened
-#    And first result is: "<SearchingResult>"
-#
-#    Examples:
-#      | SearchingText      | SearchingResult                            |
-#      | Selenium WebDriver | Selenium WebDriver                         |
-#      | Cucumber Trainings | Online training - Cucumber School·Cucumber |
-
   @Team3
   Scenario: Categories are present as drop down from Home-page
     Given open shop page
@@ -49,11 +38,7 @@ Scenario: Ensure each subcategory button contains count of available products
   Then i click categories button MP3 players
   And i see number of MP3 players
 
-#   @lienetest
-#    Scenario: check Lienes test
-#     Given open shop page
-#     Then add out of stock item to basket
-#     And I see error
+
 
 
 

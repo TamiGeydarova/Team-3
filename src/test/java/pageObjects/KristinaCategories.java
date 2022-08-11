@@ -25,8 +25,6 @@ public class KristinaCategories extends Page {
     @FindBy(how=How.XPATH, using = "//*[text()='Software']" )
     private WebElement clickSoftware;
 
-//    @FindBy(how=How.XPATH, using = "//*[text()='There are no products to list in this category.']" )
-//    private WebElement noProductsInSoftware;
     @FindBy(how=How.XPATH, using = "//*[text()='Phones & PDAs']" )
     private WebElement clickPhonesAndPdas;
     @FindBy(how=How.XPATH, using = "//*[text()='Cameras']" )
@@ -70,9 +68,6 @@ public class KristinaCategories extends Page {
         clickSoftware.click();
     }
 
-//    public void noProductsInSoftware(){
-//        noProductsInSoftware.getText();
-//    }
     public void clickPhonesAndPdas(){
         clickPhonesAndPdas.click();
     }
