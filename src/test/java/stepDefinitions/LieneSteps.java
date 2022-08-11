@@ -77,7 +77,7 @@ public class LieneSteps {
 
     @And("^Out of stock item is added to Shopping Cart$")
     public void outOfStockItemAdded() {
-        driver.get("http://www.demoshop24.com/index.php?route=product/product&product_id=40");
+        driver.get("http://www.demoshop24.com/index.php?route=product/product&product_id=49");
         driver.findElement(By.xpath("//*[@id=\"button-cart\"]")).click();
     }
 
