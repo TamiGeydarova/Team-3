@@ -1,4 +1,4 @@
-@checkoutLink
+@Team3 @checkoutLink
 Feature: Checkout Button Appearance And Redirect To Checkout Page
 
   Background:
@@ -21,7 +21,7 @@ Feature: Checkout Button Appearance And Redirect To Checkout Page
     Then I click on Checkout
     And I am on the Checkout Page
 
-    //
+
 
 
 
