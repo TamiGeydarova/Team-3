@@ -10,8 +10,7 @@ import pageObjects.*;
 
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TinaSteps extends GeneralSteps {
 
@@ -99,9 +98,9 @@ public class TinaSteps extends GeneralSteps {
         Thread.sleep(2000);
     }
 
-    @And("I see message \"([^\"]*)\"")
+    @And("I see message for wish list \"([^\"]*)\"")
     public void iSeeSuccessWishMessage(String successMessage){
-        assertEquals(successMessage, productPage.getSuccessAlert());
+        assertEquals(successMessage, productPage.getSuccessAlert(productPage.getLinkForIPodClassicInAlert(), productPage.getLinkForWishListInAlert()));
     }
 
     @And("^Wishlist icon is updated accordingly$")
@@ -110,5 +109,36 @@ public class TinaSteps extends GeneralSteps {
 
     }
 
+    @Then("^I click on two arrow icon on iPod Classic$")
+    public void iClickOnCompareButton()throws Exception{
+        productPage.clickOnCompareButton1();
+        Thread.sleep(2000);
+    }
 
+    @Then("I see message for comparison \"([^\"]*)\"")
+    public void iSeeSuccessCompareMessage(String successMessage){
+        assertEquals(successMessage, productPage.getSuccessAlert(productPage.getLinkForIPodClassicInAlert(), productPage.getCompareLinkInAlert()));
+    }
+
+    @And("^product comparison text is clickable$")
+    public void assertCompareLintClickable(){
+        assertTrue(productPage.getCompareLinkInAlert().isEnabled());
+    }
+
+    @Then("^I click on cart icon on iPod Classic$")
+    public void iClickOnCardButton1()throws Exception{
+        productPage.clickOnCardButton1();
+        Thread.sleep(2000);
+    }
+
+    @Then("I see message for cart \"([^\"]*)\"")
+    public void iSeeSuccessCartMessage(String successMessage){
+        assertEquals(successMessage, productPage.getSuccessAlert(productPage.getLinkForIPodClassicInAlert(), productPage.getCartLinkInAlert()));
+    }
+
+    @And("^shopping cart popup item count changes$")
+    public void assertCartButtonPopupText(){
+        assertEquals("1 item(s) - $122.00", productPage.getCartMainButton().getText());
+
+    }
 }
