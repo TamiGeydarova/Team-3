@@ -6,18 +6,18 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 
 import flowWorkers.WebDriverLib;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.TinaCheckoutPage;
+
+import static org.junit.Assert.*;
 
 public class LieneSteps {
     public WebDriverLib driver;
@@ -82,9 +82,11 @@ public class LieneSteps {
     }
 
     @Then("^I see error message: \"([^\"]*)\"$")
-    public void outOfStockErrorMessage(String errorMessage) {
-        assertTrue(driver.findElement(By.xpath("//*[@id=\"checkout-cart\"]/div[1]")).isDisplayed());
-        assertEquals(errorMessage, driver.findElement(By.xpath("//*[@id=\"checkout-cart\"]/div[1]")).getText());
+    public void outOfStockErrorMessage(String errorMsg) {
+       assertTrue(driver.findElement(By.xpath("//*[@id=\"checkout-cart\"]/div[1]")).isDisplayed());
+        assertEquals("Products marked with *** are not available in the desired quantity or not in stock!\n" +
+                "×",driver.findElement(By.className("alert-dismissible")).getText());
+
     }
 
 
