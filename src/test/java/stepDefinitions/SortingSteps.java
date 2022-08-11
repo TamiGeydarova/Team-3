@@ -13,24 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 
     public class SortingSteps extends GeneralSteps{
 
-//        private MainPage mainPage = new MainPage(driver);
-//        private ResultPage resultPage = new ResultPage(driver);
-//        private LoginPage loginPage = new LoginPage(driver);
 
-//    public SortingSteps () {
-//        this.driver = WebDriverLib.driver;
-//        mainPage = PageFactory.initElements(WebDriverLib.driver, MainPage.class);
-//    }
-
-//    @Before
-//    public void openBrowser() {
-//        driver.openBrowser();
-//    }
-
-//    @After
-//    public void closeBrowser() {
-//        driver.close();
-//    }
 
     @Given("^I am on Browse page$")
     public void iAmOnBrowsePage() {
@@ -60,10 +43,7 @@ import org.openqa.selenium.support.ui.Select;
             Thread.sleep(2000);
         }
 
-        //    @Then ("^I check merchendise ZA$")
-//        public void iCheckMerchendiseZA(){
-        //        driver.findElement(By.xpath("//a[contains(text(),'Sony VAIO')]"));
-//        driver.findElement(By.xpath("//a[contains(text(),'Apple Cinema 30')]"));
+
 
         @Then ("^I Sort by Price Low to High$")
         public void iSortByPriceLowtoHigh() throws InterruptedException {
@@ -72,10 +52,7 @@ import org.openqa.selenium.support.ui.Select;
             Thread.sleep(2000);
         }
 
-////        @And ("^I check merchendise Price Low to High$")
-//        public void iCheckmerchendisePriceLowtoHigh(){
-//
-//        }
+
 
         @Then ("^I Sort by Price High to Low$")
         public void iSortByPriceHighttoLow() throws InterruptedException {
@@ -84,9 +61,7 @@ import org.openqa.selenium.support.ui.Select;
             Thread.sleep(2000);
     }
 
-//        @And ("^I check merchendise Price High to Low$")
-//         public void iCheckMerchendisePriceHightoLow() {
-//        }
+
 
         @Then ("^I Sort by rating High to low$")
         public void iSortByRatingHightoLow() throws InterruptedException {
@@ -95,9 +70,7 @@ import org.openqa.selenium.support.ui.Select;
             Thread.sleep(2000);
         }
 
-//        @And ("^I check merchendise rating High to low$")
-//        public void iCheckMerchendiseRatingHightoLow() {
-//        }
+
 
         @Then ("^I Sort by rating Low to High$")
         public void iSortByRatingLowtoHigh() throws InterruptedException {
@@ -105,10 +78,7 @@ import org.openqa.selenium.support.ui.Select;
             dropdown.selectByVisibleText("Rating (Lowest)");
             Thread.sleep(2000);
         }
-//        @And ("^I check merchendise rating Low to High$")
-//        public void iCheckMerchendiseRatingLowtoHigh(){
-//
-//        }
+
 
         @Then ("^I Sort by Model name alphabetically AZ$")
         public void iSortByModelNameAlphabeticallyAZ() throws InterruptedException {
@@ -116,10 +86,7 @@ import org.openqa.selenium.support.ui.Select;
             dropdown.selectByVisibleText("Model (A - Z)");
             Thread.sleep(2000);
         }
-//        @And ("^I check merchendise models AZ$")
-//        public void iCheckMerchendiseModelsAZ(){
-//
-//        }
+
 
         @Then ("^I Sort by Model name alphabetically ZA$")
         public void iSortByModelNameAlphabeticallyZA() throws InterruptedException {
@@ -128,15 +95,5 @@ import org.openqa.selenium.support.ui.Select;
             Thread.sleep(2000);
         }
 
-//        @And ("^I check merchendise models ZA$")
-//        public void iCheckMerchediseModelsZA(){
-//
-//        }
-//        @Then ("^I hover over mp3player$")
-//        public void iHoverOverMp3player() throws InterruptedException {
-//            driver.findElement(By.xpath("//a[contains(text(),'MP3 Players')]"));
-//            Thread.sleep(5000);
-//        }
+
 }
-        //Name (A - Z)
-//input-sort
