@@ -1,7 +1,7 @@
 @Test29
 Feature: Team3 Test Case 29 execution
   As a Bootcamp participant
-  I want to be able to write and execute 1 scenario for adding item to Wish List
+  I want to be able to write and execute 3 scenario for adding item to Wish List, Compare and Cart from  product page
 
   Background:
     Given I am on shop page
