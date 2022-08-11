@@ -28,7 +28,7 @@ Feature: Team3 Test Case 29 execution
     And product comparison text is clickable
 
 
-  Scenario: a new scenario for adding item to Compare
+  Scenario: a new scenario for adding item to Shopping cart
     When I am on the MP3 Players list page
     Then I click on cart icon on iPod Classic
     Then I see message for cart "Success: You have added iPod Classic to your shopping cart!"
