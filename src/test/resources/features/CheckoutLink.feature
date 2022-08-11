@@ -1,4 +1,4 @@
-@Team3 @checkoutLink
+@Team3
 Feature: Checkout Button Appearance And Redirect To Checkout Page
 
   Background:

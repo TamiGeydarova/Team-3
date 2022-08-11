@@ -1,4 +1,4 @@
-@Team3 @TC18
+@Team3
 Feature: Ensure checkout process is not possible with out of stock items
 
   Scenario:
