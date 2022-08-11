@@ -31,23 +31,25 @@ Feature: Kristina
     Then click categories button Desktops
     And i see dropdown
 
-#  @INSERT_TAG_HERE
-#  Scenario: Ensure browse page contains list of products from this category
-#    Given open shop page
-#    Then click button Show all Desktops
-#    And subcategory desktop has desktops
-#    Then click button laptops and notebooks from left side menu
-#    And subcategory laptops and notebooks has laptops and notebooks
-#    Then click button components from left side menu
-#    And subcategory components has components
-#    Then click button Software from left side menu
-#    And subcategory software has software
-#    Then click phones and pdas from left side menu
-#    And subcategory phones and pdas has phones and pdas
-#    Then click button cameras from left side menu
-#    And subcategory cameras has cameras
-#    Then click button mp3 players from left side menu
-#    And subbcategory mp3 players has players
+  @INSERT_TAG_HERE
+Scenario: Ensure each subcategory button contains count of available products
+  Given open shop page
+  Then click categories button Desktops
+  And I see number of Desktops
+  Then click categories button Laptops and Notebooks
+  And I see number of Laptops and Notebooks
+  Then click categories button Tablets
+  And i see number of Tablets
+  Then i click Software
+  And i see number of Software
+  Then i click categories button Phones and PDAs
+  And i see number of Phones and PDAs
+  Then i click categories button Cameras
+  And i see number of Cameras
+  Then i click categories button MP3 players
+  And i see number of MP3 players
+
+
 
 
 
