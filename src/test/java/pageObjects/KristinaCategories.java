@@ -33,6 +33,9 @@ public class KristinaCategories extends Page {
     private WebElement clickCameras;
     @FindBy(how=How.XPATH, using = "//*[text()='MP3 Players']" )
     private WebElement clickMP3players;
+    @FindBy(how=How.XPATH, using = "//*[text()='Show All Desktops']" )
+    private WebElement clickShowAllDesktops;
+
 
 
 
@@ -79,6 +82,10 @@ public class KristinaCategories extends Page {
     public void clickMP3players(){
         clickMP3players.click();
     }
+    public void clickShowAllDesktops(){
+        clickShowAllDesktops.click();
+    }
+
 
 
 

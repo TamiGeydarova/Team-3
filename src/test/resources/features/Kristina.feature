@@ -12,26 +12,26 @@ Feature: Kristina
 #      | Selenium WebDriver | Selenium WebDriver                         |
 #      | Cucumber Trainings | Online training - Cucumber School·Cucumber |
 
-  @INSERT_TAG_HERE
+  @Team3
   Scenario: Categories are present as drop down from Home-page
     Given open shop page
     Then click categories button Desktops
     And i see dropdown
-  @INSERT_TAG_HERE
+  @Team3
     Scenario: Categories are present as drop down from Registration page
       Given open shop page
       Then click My Account button
       Then click Register button
       Then click categories button Desktops
       And i see dropdown
-  @INSERT_TAG_HERE
+  @Team3
   Scenario: Categories are present as drop down from Shopping Cart
     Given open shop page
     Then click on shopping cart
     Then click categories button Desktops
     And i see dropdown
 
-  @INSERT_TAG_HERE
+  @Team3
 Scenario: Ensure each subcategory button contains count of available products
   Given open shop page
   Then click categories button Desktops
@@ -48,6 +48,17 @@ Scenario: Ensure each subcategory button contains count of available products
   And i see number of Cameras
   Then i click categories button MP3 players
   And i see number of MP3 players
+
+#   @lienetest
+#    Scenario: check Lienes test
+#     Given open shop page
+#     Then add out of stock item to basket
+#     And I see error
+
+
+
+
+
 
 
 

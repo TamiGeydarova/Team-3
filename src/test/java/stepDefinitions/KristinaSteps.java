@@ -38,10 +38,7 @@ public class KristinaSteps extends GeneralSteps {
     }
     @Then("^click categories button Desktops$")
     public void clickCategoriesButtonDesktop(){
-//        List<WebElement> categories = driver.findElements(By.xpath("//*[text()='Desktops']"));
-//        for (WebElement category : categories){
-//            categories.get(0).click();
-//        }
+
         desktopButton.clickOnDesktopButton();
     }
     @And("^i see dropdown$")
@@ -53,35 +50,24 @@ public class KristinaSteps extends GeneralSteps {
     public void clickMyAccountButton(){
         desktopButton.clickOnMyAccountButton();
 
-//        driver.findElement(By.xpath("//*[text()='My Account']")).click();
 
     }
     @Then("^click Register button$")
     public void clickRegisterButton(){
         desktopButton.clickRegisterButton();
-//        List<WebElement> elems = driver.findElements(By.className("dropdown-menu"));
-//        Select dropdown = new Select(driver.findElement(By.className("My Account")));
-//        dropdown.selectByVisibleText("Register");
-
-//        driver.findElement(By.xpath("//*[text()='Register']")).click();
     }
 
 @Then("^click on shopping cart$")
     public void clickOnShoppingCart(){
         desktopButton.ClickOnShoppingCart();
 
-//        driver.findElement(By.xpath("//*[text()='Shopping Cart']")).click();
 }
 @Then("click button Show all Desktops")
     public void clickButtonShowAllDesktops(){
-        driver.findElement(By.xpath("//*[text()=Show All Desktops']")).click();
+//        driver.findElement(By.xpath("//*[text()=Show All Desktops']")).click();
+    desktopButton.clickShowAllDesktops();
 }
-//@Then("^subcategory desktop has desktops$")
-//    public void subcategoryDesktopHasDesktops(){
-//    List<WebElement> desktops = driver.findElements(By.className("product-layout"));
-//    if (desktops.contains("Canon "))
-//
-//}
+
     @And("^I see number of Desktops$")
     public void iSeeNumberOfDesktops(){
         assertEquals("PC (0)", driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=20_26']"))
@@ -111,7 +97,7 @@ public class KristinaSteps extends GeneralSteps {
 @And("^i see number of Tablets$")
     public void iSeeNumberOfTablets(){
     assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
-    System.out.println("Test run incorrectly");
+
 }
 
 @Then("^i click Software$")
@@ -121,8 +107,6 @@ public class KristinaSteps extends GeneralSteps {
 @And("^i see number of Software$")
     public void iSeeNumbberOfSoftware(){
     assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
-//        assertEquals("There are no products to list in this category.", driver.findElement(By.xpath("//*[text()=There are no products to list in this category.']")).getText());
-    System.out.println("Test run incorrectly");
     }
 
     @Then("^i click categories button Phones and PDAs$")
@@ -146,6 +130,7 @@ public class KristinaSteps extends GeneralSteps {
     public void iSeeNumberOfCameras(){
         assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
 
+
     }
     @Then("^i click categories button MP3 players$")
     public void iClickMP3players(){
@@ -159,13 +144,23 @@ public class KristinaSteps extends GeneralSteps {
         //assertTrue(driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=34_43']")).isEnabled());
 
 
-        //checking that element is shown correctly
+        //checking that element are shown correctly
         assertEquals("test 11 (0)", driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=34_43']")).getText());
-        //if elemtn is shown correclty, than we are printing message, that number(count) is shown correctly
-        System.out.println("Number of elements is shown, but names are incorrect");
 
     }
 
+//    @Then("^add out of stock item to basket$")
+//    public void iaddoutofstockitem(){
+//        driver.get("http://www.demoshop24.com/index.php?route=product/product&product_id=40");
+//        driver.findElement(By.id("button-cart")).click();
+//        homePage.clickOnCheckoutLink();
+//    }
+//    @And("^I see error$")
+//    public void iseeerror(){
+//        assertEquals("Products marked with *** are not available in the desired quantity or not in stock!\n" +
+//                "×",driver.findElement(By.className("alert-dismissible")).getText());
+//
+//    }
 
 
 }
