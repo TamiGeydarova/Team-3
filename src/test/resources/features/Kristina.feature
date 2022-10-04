@@ -20,7 +20,7 @@ Feature: Kristina
     Then click categories button Desktops
     And i see dropdown
 
-  @Team3
+  @Team3_1
 Scenario: Ensure each subcategory button contains count of available products
   Given open shop page
   Then click categories button Desktops

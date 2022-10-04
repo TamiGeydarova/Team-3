@@ -96,7 +96,7 @@ public class KristinaSteps extends GeneralSteps {
 
 @And("^i see number of Tablets$")
     public void iSeeNumberOfTablets(){
-    assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
+    assertTrue(driver.findElement(By.linkText("Tablets (1)")).isDisplayed());
 
 }
 
@@ -106,7 +106,7 @@ public class KristinaSteps extends GeneralSteps {
 }
 @And("^i see number of Software$")
     public void iSeeNumbberOfSoftware(){
-    assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
+    assertTrue(driver.findElement(By.linkText("Software (0)")).isDisplayed());
     }
 
     @Then("^i click categories button Phones and PDAs$")
@@ -117,18 +117,20 @@ public class KristinaSteps extends GeneralSteps {
 
     @And("^i see number of Phones and PDAs$")
     public void iSeeNumberOfPhonesAndPdas(){
-        assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
+        assertTrue(driver.findElement(By.linkText("Phones & PDAs (3)")).isDisplayed());
 
 
     }
     @Then("^i click categories button Cameras$")
     public void iClickCategoriesButtonCameras(){
-        desktopButton.clickCameras();
+        desktopButton.clickCameras()
+;
 
     }
     @And("^i see number of Cameras$")
     public void iSeeNumberOfCameras(){
-        assertTrue(driver.findElement(By.className("dropdown open")).isEnabled());
+        assertTrue(driver.findElement(By.xpath("//*[@href = 'http://www.demoshop24.com/index.php?route=product/category&path=33']")).isEnabled());
+
 
 
     }
