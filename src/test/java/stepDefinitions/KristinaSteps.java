@@ -137,6 +137,7 @@ public class KristinaSteps extends GeneralSteps {
     @Then("^i click categories button MP3 players$")
     public void iClickMP3players(){
         desktopButton.clickMP3players();
+        driver.manage().deleteAllCookies();
 
     }
     @And("^i see number of MP3 players$")
